@@ -18,10 +18,12 @@ const IndexPage = () => (
           <div>
             {data.allMarkdownRemark.edges.map(({ node }) => (
               <Post
+                key={node.id}
                 title={node.frontmatter.title}
                 author={node.frontmatter.author}
                 path={node.frontmatter.path}
                 date={node.frontmatter.date}
+                tags={node.frontmatter.tags}
                 body={node.excerpt}
                 fluid={node.frontmatter.image.childImageSharp.fluid}
               />
@@ -44,6 +46,7 @@ const indexQuery = graphql`
             date(formatString: "MM Do YYYY")
             author
             path
+            tags
             image {
               childImageSharp {
                 fluid(maxWidth: 600) {
