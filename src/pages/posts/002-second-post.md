@@ -1,8 +1,7 @@
 ---
 title: "Second Post - HTML"
-date: "2019-07-28 04:30:00"
+date: "2019-06-28 04:30:00"
 author: "Yetunde Sola-Adebayo"
-path: "/second-post"
 image: ../../images/javascript.jpg
 tags:
   - code
