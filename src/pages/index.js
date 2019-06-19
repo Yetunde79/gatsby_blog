@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 import Post from "../components/Post"
 
 const IndexPage = () => (
-  <Layout>
+  <Layout pageTitle="Home">
     <SEO title="Home" />
     <h1>Homepage</h1>
     <StaticQuery
