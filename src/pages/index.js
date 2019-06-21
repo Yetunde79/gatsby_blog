@@ -1,5 +1,4 @@
 import React from "react"
-// import { Link } from "gatsby"
 import { graphql, StaticQuery } from "gatsby"
 import { Row, Col } from "reactstrap"
 
@@ -10,7 +9,6 @@ import Post from "../components/Post"
 const IndexPage = () => (
   <Layout pageTitle="Home">
     <SEO title="Home" />
-    <h1>Homepage</h1>
     <StaticQuery
       query={indexQuery}
       render={data => {
