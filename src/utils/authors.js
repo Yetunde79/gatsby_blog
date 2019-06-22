@@ -23,4 +23,6 @@ const authors = [
   },
 ]
 
+//TODO: Change author to my name and info
+
 module.exports = authors
