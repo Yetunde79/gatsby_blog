@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 
 import Header from "./header"
 
@@ -26,6 +27,9 @@ const Layout = ({ children, pageTitle }) => (
     `}
     render={data => (
       <>
+        <Helmet>
+          <script src="https://kit.fontawesome.com/54e49a5b38.js"></script>{" "}
+        </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div className="container" id="content">
           <h1>{pageTitle}</h1>

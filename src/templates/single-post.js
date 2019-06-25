@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
+
 import {
   Badge,
   Card,
@@ -74,9 +75,7 @@ const SinglePost = ({ data, pageContext }) => {
                   className="facebook"
                   taret="_blank"
                   rel="noopener noreferrer"
-                >
-                  <i className="fab fa-facebook-f fa-2x" />
-                </a>
+                ></a>
               </li>
               <li>
                 <a

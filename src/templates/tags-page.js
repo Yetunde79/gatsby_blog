@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/layout"
-import { graphql, Link } from "gatsby"
 import SEO from "../components/seo"
 import { Badge, Button } from "reactstrap"
 import { slugify } from "../utils/utilityfunction"
