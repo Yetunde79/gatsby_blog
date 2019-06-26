@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { Component } from "react"
 
@@ -10,10 +9,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
 } from "reactstrap"
 
 class Header extends Component {
@@ -36,7 +31,7 @@ class Header extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="/tags">Tags</NavLink>
+                  <NavLink href="/">Home</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>

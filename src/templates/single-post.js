@@ -3,20 +3,12 @@ import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
+import { Badge, Card, CardBody, CardSubtitle, Row, Col } from "reactstrap"
+import { DiscussionEmbed } from "disqus-react"
 
-import {
-  Badge,
-  Card,
-  CardBody,
-  CardText,
-  CardTitle,
-  CardSubtitle,
-  Row,
-  Col,
-} from "reactstrap"
 import { slugify } from "../utils/utilityfunction"
 import authors from "../utils/authors"
-import { DiscussionEmbed } from "disqus-react"
+import Sidebar from "../components/Sidebar"
 
 const SinglePost = ({ data, pageContext }) => {
   const post = data.markdownRemark.frontmatter
@@ -35,7 +27,7 @@ const SinglePost = ({ data, pageContext }) => {
     <Layout>
       <SEO title={post.title} />
       <Row>
-        <Col md="8">
+        <Col md="8" style={{ paddingBottom: "5%" }}>
           <Card>
             <Img
               className="card-image-top"
@@ -73,9 +65,11 @@ const SinglePost = ({ data, pageContext }) => {
                     pageContext.slug
                   }
                   className="facebook"
-                  taret="_blank"
+                  target="_blank"
                   rel="noopener noreferrer"
-                ></a>
+                >
+                  <i className="fab fa-facebook-f fa-2x" />
+                </a>
               </li>
               <li>
                 <a
@@ -89,7 +83,7 @@ const SinglePost = ({ data, pageContext }) => {
                     "twiiterHandle"
                   }
                   className="twitter"
-                  taret="_blank"
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   <i className="fab fa-twitter fa-2x" />
@@ -103,7 +97,7 @@ const SinglePost = ({ data, pageContext }) => {
                     pageContext.slug
                   }
                   className="linkedin"
-                  taret="_blank"
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   <i className="fab fa-linkedin fa-2x" />
@@ -114,76 +108,12 @@ const SinglePost = ({ data, pageContext }) => {
           <br />
           <br />
           <DiscussionEmbed shortname={DisqusShortName} config={DisqusConfig} />
-          <br />
-          <br />
         </Col>
         <Col md="4">
-          <Card>
-            <Img
-              className="card-image-top"
-              fluid={data.file.childImageSharp.fluid}
-            />
-            <CardBody>
-              <CardTitle className="text-center text-uppercase mb-3">
-                {author.name}
-              </CardTitle>
-              <CardText>{author.bio}</CardText>
-              <div className="author-social-links text-center">
-                <ul>
-                  <li>
-                    <a
-                      href={author.facebook}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="facebook"
-                    >
-                      <i className="fab fa-facebook-f fa-lg"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={author.twitter}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="twitter"
-                    >
-                      <i className="fab fa-twitter fa-lg"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={author.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="instagram"
-                    >
-                      <i className="fab fa-instagram fa-lg"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={author.google}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="google"
-                    >
-                      <i className="fab fa-google fa-lg"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={author.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="linkedin"
-                    >
-                      <i className="fab fa-linkedin fa-lg"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </CardBody>
-          </Card>
+          <Sidebar
+            authorImage={data.file.childImageSharp.fluid}
+            author={author}
+          />
         </Col>
       </Row>
     </Layout>
@@ -191,7 +121,7 @@ const SinglePost = ({ data, pageContext }) => {
 }
 
 export const postQuery = graphql`
-  query blogPostbySlug($slug: String!, $imageUrl: String!) {
+  query blogPostBySlug($slug: String!, $imageUrl: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
