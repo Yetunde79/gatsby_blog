@@ -18,7 +18,7 @@ const IndexPage = () => {
             data.allMarkdownRemark.totalCount / postPerPage
           )
           return (
-            <div>
+            <div style={{ paddingLeft: "15%", paddingRight: "15%" }}>
               {data.allMarkdownRemark.edges.map(({ node }) => (
                 <Post
                   key={node.id}

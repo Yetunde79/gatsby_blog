@@ -1,19 +1,11 @@
 const authors = [
   {
-    name: "John Doe",
-    imageUrl: "john.jpg",
-    bio:
-      "John has been a front-end and UI designer for over 10 years, he is also a brilliant artist.",
-    facebook: "https://www.facebook.com",
-    twitter: "https://www.twitter.com",
-  },
-  {
-    name: "Jane Doe",
+    name: "Yetunde Sola-Adebayo",
     imageUrl: "jane.jpg",
     bio:
-      "Jane is a backend developer. She specializes in security and her favorite stack is the MERN stack",
-    facebook: "https://www.facebook.com",
-    twitter: "https://www.twitter.com",
+      "Yetunde has been a front-end developer for the past 2 years, She is also a podcaster at NewbTalks.",
+    twitter: "https://www.twitter.com/yetunde_sola",
+    linkedin: "https://www.linkedin.com/in/yetundeadebayo/",
   },
 ]
 

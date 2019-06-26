@@ -1,7 +1,7 @@
 ---
 title: "First Post - Introduction"
 date: "2019-05-28 04:30:00"
-author: "John Doe"
+author: "Yetunde Sola-Adebayo"
 image: ../../images/javascript.jpg
 tags:
   - code

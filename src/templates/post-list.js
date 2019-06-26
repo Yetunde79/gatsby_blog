@@ -9,22 +9,24 @@ const postList = ({ data, pageContext }) => {
   const { currentPage, numberOfPages } = pageContext
   return (
     <Layout pageTitle={`Page: ${currentPage}`}>
-      {posts.map(({ node }) => (
-        <Post
-          key={node.id}
-          title={node.frontmatter.title}
-          author={node.frontmatter.author}
-          slug={node.fields.slug}
-          date={node.frontmatter.date}
-          tags={node.frontmatter.tags}
-          body={node.excerpt}
-          fluid={node.frontmatter.image.childImageSharp.fluid}
+      <div style={{ paddingLeft: "15%", paddingRight: "15%" }}>
+        {posts.map(({ node }) => (
+          <Post
+            key={node.id}
+            title={node.frontmatter.title}
+            author={node.frontmatter.author}
+            slug={node.fields.slug}
+            date={node.frontmatter.date}
+            tags={node.frontmatter.tags}
+            body={node.excerpt}
+            fluid={node.frontmatter.image.childImageSharp.fluid}
+          />
+        ))}
+        <PaginationLinks
+          currentPage={currentPage}
+          numberOfPages={numberOfPages}
         />
-      ))}
-      <PaginationLinks
-        currentPage={currentPage}
-        numberOfPages={numberOfPages}
-      />
+      </div>
     </Layout>
   )
 }
